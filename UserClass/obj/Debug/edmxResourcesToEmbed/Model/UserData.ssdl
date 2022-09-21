@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InsuranceDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PolicyDb">
+    <Key>
+      <PropertyRef Name="PolicyName" />
+    </Key>
+    <Property Name="PolicyName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PolicyAmount" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="userEmail" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userFirstName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userLastName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userDob" Type="date" Nullable="false" />
+    <Property Name="userContact" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="userAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userPwd" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__PolicyDb__userEm__5FB337D6">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="PolicyDb" Type="Self.PolicyDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="userEmail" />
+      </Principal>
+      <Dependent Role="PolicyDb">
+        <PropertyRef Name="userEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InsuranceDBModelStoreContainer">
+    <EntitySet Name="PolicyDb" EntityType="Self.PolicyDb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PolicyDb__userEm__5FB337D6" Association="Self.FK__PolicyDb__userEm__5FB337D6">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="PolicyDb" EntitySet="PolicyDb" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

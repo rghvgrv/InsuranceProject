@@ -1,0 +1,12 @@
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\obj\Debug\UserClass.csproj.AssemblyReference.cache
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\obj\Debug\UserClass.csproj.CoreCompileInputs.cache
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\UserClass.dll.config
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\UserClass.dll
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\UserClass.pdb
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\EntityFramework.dll
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\EntityFramework.xml
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\obj\Debug\UserClass.csproj.CopyComplete
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\obj\Debug\UserClass.dll
+C:\Users\sukj\source\repos\InsuranceFinal\UserClass\obj\Debug\UserClass.pdb

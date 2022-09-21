@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InsuranceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PolicyDb">
+    <Key>
+      <PropertyRef Name="PolicyName" />
+    </Key>
+    <Property Name="PolicyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PolicyAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__PolicyDb__userEm__5FB337D6" FromRole="PolicyDb" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="userEmail" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userFirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userLastName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userDob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="userContact" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="userAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userPwd" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PolicyDbs" Relationship="Self.FK__PolicyDb__userEm__5FB337D6" FromRole="UserTable" ToRole="PolicyDb" />
+  </EntityType>
+  <Association Name="FK__PolicyDb__userEm__5FB337D6">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="PolicyDb" Type="Self.PolicyDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="userEmail" />
+      </Principal>
+      <Dependent Role="PolicyDb">
+        <PropertyRef Name="userEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InsuranceDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PolicyDbs" EntityType="Self.PolicyDb" />
+    <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+    <AssociationSet Name="FK__PolicyDb__userEm__5FB337D6" Association="Self.FK__PolicyDb__userEm__5FB337D6">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="PolicyDb" EntitySet="PolicyDbs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

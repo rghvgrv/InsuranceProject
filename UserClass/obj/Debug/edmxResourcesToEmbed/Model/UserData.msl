@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InsuranceDBModelStoreContainer" CdmEntityContainer="InsuranceDBEntities">
+    <EntitySetMapping Name="PolicyDbs">
+      <EntityTypeMapping TypeName="InsuranceDBModel.PolicyDb">
+        <MappingFragment StoreEntitySet="PolicyDb">
+          <ScalarProperty Name="PolicyName" ColumnName="PolicyName" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="PolicyAmount" ColumnName="PolicyAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTables">
+      <EntityTypeMapping TypeName="InsuranceDBModel.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userFirstName" ColumnName="userFirstName" />
+          <ScalarProperty Name="userLastName" ColumnName="userLastName" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userDob" ColumnName="userDob" />
+          <ScalarProperty Name="userContact" ColumnName="userContact" />
+          <ScalarProperty Name="userAddress" ColumnName="userAddress" />
+          <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
