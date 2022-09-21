@@ -1,0 +1,52 @@
+﻿@model UserClass.Model.UserTable
+
+@{
+    ViewBag.Title = "RegisterNew";
+}
+
+<h2>RegisterNew</h2>
+<div>
+    <h2>User Registration Page</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class=" row">
+            Enter the First Name : @Html.EditorFor((m) => m.userFirstName)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userFirstName)</p>
+        </div>
+        <div class="row">
+            Enter the Last Name : @Html.EditorFor((m) => m.userLastName)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userLastName)</p>
+        </div>
+        <p>
+            Enter the EmailAddress:
+            @Html.EditorFor((m) => m.userEmail)
+        </p>
+        <p style="color:red">
+            @Html.ValidationMessageFor((m) => m.userEmail)
+        </p>
+
+        <div class="row">
+            Enter the Date Of Birth : @Html.EditorFor((m) => m.userDob)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userDob)</p>
+        </div>
+        <div class="row">
+            Enter the ContactNumber : @Html.EditorFor((m) => m.userContact)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userContact)</p>
+        </div>
+        <div class="row">
+            Enter the Permanent : @Html.EditorFor((m) => m.userAddress)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userAddress)</p>
+        </div>
+        <div class="row">
+            Enter the Password:@Html.EditorFor((m) => m.userPwd)
+            <p class="err"> @Html.ValidationMessageFor((m) => m.userPwd)</p>
+        </div>
+        <div>
+            ReType the Password: @Html.Editor("Passsword Retype")
+        </div>
+        <button>Register</button>
+    }
+</div>
+
