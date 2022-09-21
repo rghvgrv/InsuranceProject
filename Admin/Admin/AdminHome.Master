@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminHome.master.cs" Inherits="InsuranceProject.Admin.AdminHome" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="~/Admin/AdminCSS.css" rel="Stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Admin Page</h1>
+
+            <hr />
+            <nav style="height: 100px; text-align: center">
+                <asp:Menu runat="server" Orientation="Horizontal" StaticSubMenuIndent="10px" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#7C6F57" Style="text-align: left">
+                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                    <Items>
+                        <asp:MenuItem Text="Home" NavigateUrl="~/Admin/AdminHome.aspx" />
+                        <asp:MenuItem Text="Add Employee" NavigateUrl="~/Admin/AddUser.aspx" />
+                        <asp:MenuItem Text="View Customers" NavigateUrl="~/Admin/ViewCust.aspx" />
+                        <asp:MenuItem Text="Logout" NavigateUrl="~/AdminPage.aspx" />
+                    </Items>
+                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                </asp:Menu>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
